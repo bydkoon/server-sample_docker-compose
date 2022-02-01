@@ -26,3 +26,18 @@ services:
         volumes:
           - ./serverDev:/srv/docker-server
           - ./log:/var/log/uwsgi
+
+    db:
+      image: mysql:latest
+      container_name: docker-server/mysql
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_ROOT_PASSWORD: pro
+        MYSQL_DATABASE: product
+        MYSQL_USER: pro
+        MYSQL_PASSWORD: helloworld
+        TZ: 'Asia/Tokyo'
+      volumes:
+        - ./mysql:/var/lib/mysql
+        - ./sql:/docker-entrypoint-initdb.d

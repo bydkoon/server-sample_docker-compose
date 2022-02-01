@@ -3,3 +3,4 @@ Django==4.0.1
 requests==2.27.1
 aiohttp==3.8.1
 uWSGI==2.0.20
+mysqlclient==2.1.0
